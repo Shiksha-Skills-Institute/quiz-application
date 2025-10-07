@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Application</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jaini&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="container nav-bar">
+            <h1><img src="./assets/images/logo.svg" alt="" srcset=""></h1>
+            <ul class="nav-links">
+                <li class="nav-item">Home</li>
+                <li class="nav-item">About</li>
+                <li class="nav-item">Contact</li>
+            </ul>
+            <img class="hamburger" src="./assets/images/hamburger.svg" alt="" srcset="">
+        </nav>
+    </header>
+    <section class="container main-section">
+        <div class="hero-section">
+            <img src="./assets/images/hero-image.png" alt="" srcset="">
+            <h1>Test Your Knowledge</h1>
+            <button id="start-quiz">Let’s Play</button>
+        </div>
+        <div class="quiz-container">
+            <div class="quiz-header">
+                <h2 id="question">Question Text</h2>
+                <ul>
+                    <li>
+                        <input type="radio" name="answer" id="a" class="answer">
+                        <label for="a" id="a_text">Answer</label>
+                    </li>
+                    <li>
+                        <input type="radio" name="answer" id="b" class="answer">
+                        <label for="b" id="b_text">Answer</label>
+                    </li>
+                    <li>
+                        <input type="radio" name="answer" id="c" class="answer">
+                        <label for="c" id="c_text">Answer</label>
+                    </li>
+                    <li>
+                        <input type="radio" name="answer" id="d" class="answer">
+                        <label for="d" id="d_text">Answer</label>
+                    </li>
+                </ul>
+                
+            </div>
+            <button id="submit">Submit</button>
+        </div>
+        <script src="./assets/js/script.js"></script>
+
+    </section>
+</body>
+</html>
