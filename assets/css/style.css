@@ -140,6 +140,100 @@ section.main-section h1 {
    align-items: center;
 }
 
+.our-features-section {
+    color: var(--primary-color);
+    
+    text-align: center;
+    font-size: 30px;
+}
+
+.our-features-section .features {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15%;
+    margin-top: 50px;
+}
+
+.our-features-section .features .feature {
+    flex-basis: 33.33%;
+    padding: 80px 30px;
+    background-color: var(--secondary-color);
+    border-radius: 25px;
+}
+
+/**
+* Contact Page 
+*/
+
+.contact-hero-section {
+    padding-bottom: 0;
+}
+
+.message-us-section {
+    padding: 100px 0;
+    text-align: center;
+    font-size: 30px;
+    color: var(--primary-color);
+}
+
+.message-us-section .contact-form-container {
+    display: flex;
+    margin-top: 20px;
+    justify-content: center;
+    gap: 50px;
+    align-items: center;
+}
+
+.message-us-section .contact-form-container .map {
+    flex-basis: 50%;
+    height: 80vh;
+}
+
+.message-us-section .contact-form-container .contact-form {
+    flex-basis: 50%;
+    text-align: left;
+    background-color: rgba(217, 217, 217, 0.25);
+    padding: 30px;
+    border-radius: 15px;
+}
+
+.message-us-section .contact-form-container .contact-form .form-group{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.message-us-section .contact-form-container .contact-form .form-group input,
+.message-us-section .contact-form-container .contact-form .form-group textarea{
+    background-color: var(--secondary-color);
+    padding: 5px 20px;
+    border: none;
+    border-radius: 10px;
+    font-family: var(--font-family);
+    font-size: 20px ;
+}
+
+.message-us-section .contact-form-container .contact-form button{
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    cursor: pointer;
+    width: 100%;
+    align-self: center;
+    margin-top: 10px;
+    border-radius: 10px;
+    border: none;
+    padding: 10px 20px;
+}
+
+.message-us-section .contact-form-container .contact-form .form-group input::placeholder,
+.message-us-section .contact-form-container .contact-form button,
+.message-us-section .contact-form-container .contact-form .form-group textarea::placeholder{
+    font-family: var(--font-family);
+    font-size: 20px;
+}
+
+
 @media screen and (max-width: 1024px) {
      header nav .hamburger {
         display: block;
@@ -163,6 +257,40 @@ section.main-section h1 {
     }
 }
 
+@media screen and (max-width: 768px) {
+
+    h1 {
+        font-size: 40px;
+    }
+    h3 {
+        font-size: 20px;
+    }
+    .about-hero-section .about-hero-content h1 {
+        font-size: 30px;
+        padding: 0px 50px;
+    }
+    .about-hero-section .image-info,
+    .our-features-section .features {
+        flex-direction: column;
+        gap: 30px;
+    }
+    .about-hero-section .image-info .image {
+        width: 100%;
+    }
+    .about-hero-section .image-info .content {
+        width: 100%;
+        text-align: center;
+    }
+    .our-features-section .features .feature {
+        width: 80%;
+    }
+
+    .message-us-section .contact-form-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+}
+
 @media screen and (max-width: 440px) {
 
     section.main-section h1 {
@@ -171,5 +299,10 @@ section.main-section h1 {
 
     #start-quiz {
         font-size: 20px;
+    }
+
+    .our-features-section .features .feature {
+        width: 100%;
+        padding: 50px 20px;
     }
 }
