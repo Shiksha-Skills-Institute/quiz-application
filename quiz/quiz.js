@@ -23,15 +23,27 @@ const questions = [
 
 var question = document.querySelector('.question');
 var optionsContainer = document.querySelector('.options-container')
+var optionsButtons = document.querySelectorAll('.options-container button')
+var currentQuestionIndex = 0;
 
 setupQuiz(questions);
 
+
 function setupQuiz(questions) {
-    question.innerHTML = questions[2].question;
-    optionsContainer.innerHTML = `
-        <button>${questions[2].options[0]}</button>
-        <button>${questions[2].options[1]}</button>
-        <button>${questions[2].options[2]}</button>
-        <button>${questions[2].options[3]}</button>
-    `
+    if( currentQuestionIndex < questions.length ) {
+        question.innerHTML = questions[currentQuestionIndex].question;
+        for( var optionsCounter = 0; optionsCounter < questions[currentQuestionIndex].options.length; optionsCounter++ ){
+            optionsButtons[optionsCounter].innerHTML = questions[currentQuestionIndex].options[optionsCounter];
+        }
+    } else {
+        alert("Quiz is Completed !!")
+    }
 }
+
+optionsButtons.forEach((button, index) => {
+    console.log(`Button index is: ${index}`)
+    button.addEventListener('click', function(){
+        currentQuestionIndex++;
+        setupQuiz(questions);
+    })
+});

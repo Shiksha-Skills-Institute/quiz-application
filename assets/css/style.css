@@ -69,11 +69,6 @@ header nav ul {
 /* 
  * Home Page Sections
 */
-
-/* .quiz-container {
-    display: none;
-} */
-
 section.main-section {
     margin-top: 50px;
     text-align: center;
@@ -91,6 +86,42 @@ section.main-section h1 {
     font-family: var(--font-family);
     margin-top: 50px;
     margin-bottom: 50px;
+}
+
+/*** Quiz Page ***/
+.quiz-container {
+    text-align: center;
+    margin-top: 100px;   
+}
+
+.quiz-container .question {
+    font-size: 50px;
+    margin-bottom: 50px;
+    color: var(--primary-color);
+}
+
+.quiz-container .options-container {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 75%;
+    margin: auto;
+}
+
+.quiz-container .options-container button {
+    font-family: var(--font-family);
+    font-size: 30px;
+    flex-basis: 45%;
+    padding: 20px 0;
+    border: none;
+}
+
+.quiz-container .options-container button:hover {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
 }
 
 /*
@@ -265,6 +296,16 @@ section.main-section h1 {
     h3 {
         font-size: 20px;
     }
+
+    /** Quiz Page **/
+    .quiz-container .question {
+        font-size: 30px;
+    }
+
+    .quiz-container .options-container button{
+        font-size: 20px;
+    }
+
     .about-hero-section .about-hero-content h1 {
         font-size: 30px;
         padding: 0px 50px;
