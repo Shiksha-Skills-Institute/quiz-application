@@ -24,10 +24,15 @@ const questions = [
 var question = document.querySelector('.question');
 var optionsContainer = document.querySelector('.options-container')
 var optionsButtons = document.querySelectorAll('.options-container button')
+var resultScore = document.getElementById('result-score');
+
 var currentQuestionIndex = 0;
+var userAnswers = [];
+var score = 0;
 
-setupQuiz(questions);
-
+if( question ) {
+    setupQuiz(questions);
+}
 
 function setupQuiz(questions) {
     if( currentQuestionIndex < questions.length ) {
@@ -36,14 +41,39 @@ function setupQuiz(questions) {
             optionsButtons[optionsCounter].innerHTML = questions[currentQuestionIndex].options[optionsCounter];
         }
     } else {
-        alert("Quiz is Completed !!")
+        for( var questionsCounter = 0; questionsCounter < questions.length; questionsCounter++ ){
+            if( userAnswers[questionsCounter] === questions[questionsCounter].answer ){
+                score++;
+            }
+        }
+
+        window.location.replace(`../result/index.html?score=${score}&total=${questions.length}&answers=${userAnswers.join(',')} `);
     }
 }
 
 optionsButtons.forEach((button, index) => {
-    console.log(`Button index is: ${index}`)
     button.addEventListener('click', function(){
+        userAnswers.push(index);
         currentQuestionIndex++;
         setupQuiz(questions);
     })
 });
+
+function getQueryParams() {
+    const params = {};
+    const queryString = window.location.search.substring(1);
+    const queries = queryString.split("&");
+    queries.forEach((query) => {
+        const [key, value] = query.split("=");
+        params[key] = decodeURIComponent(value);
+    });
+    console.log(params);
+    return params;
+}
+
+if( resultScore ) {
+    const queryParams = getQueryParams();
+    const score = queryParams['score'];
+    const total = queryParams['total'];
+    resultScore.innerHTML = `you got ${score}/${total} marks`;
+}

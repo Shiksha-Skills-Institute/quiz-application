@@ -66,6 +66,9 @@ header nav ul {
     margin: auto;
 }
 
+.text-center {
+    text-align: center;
+}
 /* 
  * Home Page Sections
 */
@@ -123,6 +126,32 @@ section.main-section h1 {
     background-color: var(--primary-color);
     color: var(--secondary-color);
 }
+
+/* Result Table */
+.result-hero-section {
+    padding-bottom: 20px !important;
+}
+
+.result-table table{
+    width: 60%;
+    margin: auto;
+    border-collapse: collapse;
+    border: solid 1px var(--secondary-color);
+}
+
+.result-table table thead {
+    background-color: var(--secondary-color);
+}
+
+.result-table table tbody {
+    font-size: 25px;
+    font-weight: normal;
+    opacity: 0.75;
+}
+.result-table table tbody tr {
+    border: solid 1px var(--secondary-color);
+}
+
 
 /*
  * About Us Page 
@@ -304,6 +333,15 @@ section.main-section h1 {
 
     .quiz-container .options-container button{
         font-size: 20px;
+    }
+
+    /* Result */
+    .result-table table {
+        font-size: 1.5rem;
+        width: 95%;
+    }
+    .result-table table tbody{
+        font-size: 1.2rem;
     }
 
     .about-hero-section .about-hero-content h1 {
