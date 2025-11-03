@@ -25,6 +25,7 @@ var question = document.querySelector('.question');
 var optionsContainer = document.querySelector('.options-container')
 var optionsButtons = document.querySelectorAll('.options-container button')
 var resultScore = document.getElementById('result-score');
+var resultTable = document.querySelector('.result-table table tbody');
 
 var currentQuestionIndex = 0;
 var userAnswers = [];
@@ -70,10 +71,28 @@ function getQueryParams() {
     console.log(params);
     return params;
 }
+const queryParams = getQueryParams();
 
 if( resultScore ) {
-    const queryParams = getQueryParams();
     const score = queryParams['score'];
     const total = queryParams['total'];
     resultScore.innerHTML = `you got ${score}/${total} marks`;
+}
+
+if( resultTable ) {
+    let resultAnswers = queryParams.answers.split(',')
+    
+    let tableBody = "";
+
+    questions.forEach((item, index) => {
+        tableBody += `
+        <tr>
+            <td>${item.question}</td>
+            <td>${item.options[item.answer]}</td>
+            <td>${item.options[resultAnswers[index]]}</td>
+        </tr>
+    `
+    });
+    
+    resultTable.innerHTML = tableBody;
 }
